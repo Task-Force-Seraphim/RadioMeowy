@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "RadioMeowy"
+version = "1.0.0"
+description = "Cryptographic acoustic courier; encode encrypted data into audio"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [{name = "Task Force Seraphim", email = "Task-Force-Seraphim@tuta.io"}]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Communications :: Telephony",
+    "Topic :: Multimedia :: Sound/Audio :: Conversion",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "typer>=0.9.0",
+    "rich>=13.7.0",
+    "cryptography>=42.0.0",
+    "python-gnupg>=0.5.0",
+    "numpy>=1.26.0",
+    "scipy>=1.12.0",
+    "soundfile>=0.12.0",
+    "pydub>=0.25.1",
+    "requests>=2.31.0",
+    "click>=8.1.0",
+    "pillow>=10.0.0",
+    "python-dotenv>=1.0.0",
+    "reedsolo>=1.5.7",
+    "unireedsolomon>=1.0.0",
+]
+
+[project.scripts]
+radiomeowy = "radio_meowy.cli:app"
+
+[project.urls]
+Repository = "https://github.com/Task-Force-Seraphim/RadioMeowy"
+Issues = "https://github.com/Task-Force-Seraphim/RadioMeowy/issues"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
